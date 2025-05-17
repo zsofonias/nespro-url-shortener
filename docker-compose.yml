@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  nest_starter_pg_prisma:
+  nespro_url_shortener:
     image: postgres:alpine
-    container_name: nest_starter_pg_prisma
+    container_name: nespro_url_shortener
     restart: always
     env_file:
       - .env
@@ -13,20 +13,20 @@ services:
     ports:
       - '6543:5432'
     volumes:
-      - nest_starter_pg_prisma_data:/var/lib/postgresql/data
+      - nespro_url_shortener_data:/var/lib/postgresql/data
 
-  nest_starter_pg_prisma_redis:
+  nespro_url_shortener_redis:
     image: redis:alpine
-    container_name: nest_starter_pg_prisma_redis
+    container_name: nespro_url_shortener_redis
     ports:
       - '6379:6379'
     volumes:
-      - nest_starter_pg_prisma_redis_data:/data
+      - nespro_url_shortener_redis_data:/data
 
 networks:
   default:
-    name: nest_starter_pg_prisma
+    name: nespro_url_shortener
 
 volumes:
-  nest_starter_pg_prisma_data:
-  nest_starter_pg_prisma_redis_data:
+  nespro_url_shortener_data:
+  nespro_url_shortener_redis_data:

@@ -11,6 +11,7 @@ import config from 'src/config';
 import cacheConfig from 'src/config/cache.config';
 import { CacheModule } from './cache/cache.module';
 import { CacheInterceptor } from '@nestjs/cache-manager';
+import { DatabaseModule } from 'src/database/database.module';
 
 @Global()
 @Module({
@@ -20,6 +21,7 @@ import { CacheInterceptor } from '@nestjs/cache-manager';
       load: [config, cacheConfig],
     }),
     CacheModule,
+    DatabaseModule,
   ],
   providers: [
     {

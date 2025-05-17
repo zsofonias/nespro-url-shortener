@@ -23,7 +23,7 @@ export class TransformResponseInterceptor implements NestInterceptor {
           };
         }
 
-        return { response };
+        return { data: response };
       }),
     );
   }
