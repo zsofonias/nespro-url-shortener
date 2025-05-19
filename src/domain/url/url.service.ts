@@ -103,12 +103,6 @@ export class UrlService {
   async findOne(filter: Prisma.UrlWhereInput): Promise<Url | null> {
     return await this.databaseService.url.findFirst({
       where: filter,
-      // where: {
-      //   shortUrl: {
-      //     contains: uid,
-      //     mode: 'insensitive',
-      //   },
-      // },
     });
   }
 
