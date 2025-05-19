@@ -18,7 +18,7 @@ import { UpdateUrlDto } from './dto/update-url.dto';
 import { UrlExistsPipe } from './pipes/url-exists.pipe';
 import { QueryUrlsDto } from './dto/query-urls.dto';
 import { Url } from '@prisma/client';
-import { AuthGuard } from 'src/auth/guards/auth/auth.guard';
+import { AuthGuard } from 'src/auth/guards/auth.guard';
 
 @Controller()
 export class UrlController {

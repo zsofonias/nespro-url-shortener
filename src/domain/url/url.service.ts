@@ -1,8 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 
-import { UniqueIdService } from 'src/services/unique-id/unique-id.service';
-import { DatabaseService } from 'src/database/database.service';
+import { UniqueIdService } from '../../services/unique-id/unique-id.service';
+import { DatabaseService } from '../../database/database.service';
 
 import { CreateUrlDto } from './dto/create-url.dto';
 import { UpdateUrlDto } from './dto/update-url.dto';
@@ -34,10 +34,7 @@ export class UrlService {
         shortUrl,
       },
     });
-    return {
-      url,
-      shortUrl,
-    };
+    return url;
   }
 
   async findAll(queryUrlsDto: QueryUrlsDto) {
